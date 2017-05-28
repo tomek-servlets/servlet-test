@@ -3,7 +3,7 @@
 
 
 	<Realm className="org.apache.catalina.realm.JDBCRealm"
-		connectionURL="jdbc:mysql://mysql/lllc?user=root&amp;password=root&amp;u‌​seSSL=true"
+		connectionURL="jdbc:mysql://mysql/lllc?user=root&amp;password=root&amp;u‌​seSSL=false"
 		debug="1" driverName="com.mysql.jdbc.Driver" roleNameCol="role_name"
 		userCredCol="user_pass" userNameCol="user_name" userRoleTable="user_roles"
 		userTable="users" />
