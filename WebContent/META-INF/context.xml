@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 
-     <Realm className="org.apache.catalina.realm.JDBCRealm" connectionName="root" connectionPassword="root" connectionURL="jdbc:mysql://mysql/shopcomputer" debug="1" digest="SHA" driverName="com.mysql.jdbc.Driver" roleNameCol="role_name" userCredCol="user_pass" userNameCol="user_name" userRoleTable="user_roles" userTable="users"/> 
+     <Realm className="org.apache.catalina.realm.JDBCRealm" connectionName="root" connectionPassword="root" connectionURL="jdbc:mysql://mysql/lllc" debug="1" digest="SHA" driverName="com.mysql.jdbc.Driver" roleNameCol="role_name" userCredCol="user_pass" userNameCol="user_name" userRoleTable="user_roles" userTable="users"/> 
    
 
 </Context>
