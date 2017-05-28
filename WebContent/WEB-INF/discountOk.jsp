@@ -7,7 +7,7 @@
 <title>Adding OK</title>
 </head>
 <body>
-<h3>The product has been added to the database</h3>
+<h3>The discount 0.7% has been set to all products</h3>
 <a href="index.html">To the main page</a>
 </body>
 </html>

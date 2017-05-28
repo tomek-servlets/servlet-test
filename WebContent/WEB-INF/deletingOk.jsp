@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Adding OK</title>
+<title>Deleting OK</title>
 </head>
 <body>
-<h3>The product has been added to the database</h3>
+<h3>The products has been deleted from the database</h3>
 <a href="index.html">To the main page</a>
 </body>
 </html>
