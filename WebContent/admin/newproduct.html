@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add product</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	
+	 	<a href="../Display3MaxIndexPage">   <button class="btn btn-large btn-primary" type="submit">MainPage</button></a>
+	<div class="container">
+		<div class="col-lg-12">
+
+			<h1>Add a new Product</h1>
+			<form action="../AddProduct" accept-charset="UTF-8" method="POST"
+				enctype="multipart/form-data" class="form-horizontal">
+				
+			 <div class="form-group"> 
+       <label class="control-label col-sm-2" for="pwd">Title:</label>
+        <div class="col-sm-10"> 
+				
+				
+				 <input type="text" name="title" class="form-control">
+				 
+				 
+				 </div></div>
+				 
+				 
+				 
+				 			  <div class="form-group"> 
+       <label class="control-label col-sm-2" for="pwd">Description FULL:</label>
+        <div class="col-sm-10"> 
+				 
+				<input type="text" name="descriptionFull" class="form-control"><br>
+				</div></div>
+				 
+				 
+				  <div class="form-group"> 
+       <label class="control-label col-sm-2" for="pwd">Description:</label>
+        <div class="col-sm-10"> 
+				 
+				<input type="text" name="description" class="form-control"><br>
+				</div></div>
+						  <div class="form-group"> 
+       <label class="control-label col-sm-2" for="pwd"> Price :</label>
+        <div class="col-sm-10"> 
+				
+				<input
+					type="text" name="price" class="form-control"><br> 
+					
+					</div></div>
+					
+					
+					
+					
+					
+							  <div class="form-group"> 
+       <label class="control-label col-sm-2" for="pwd">Image:</label>
+        <div class="col-sm-10"> 
+					
+					<input type="file"
+					name="image" required="required" /><br /> <br />
+					</div></div>
+					
+					<div class="form-group">
+  <label for="tag">TAG:</label>
+					<select
+					name="tag" class="selectpicker" >
+					<option value="cpu">CPU</option>
+					<option value="motherboard">MOTHERBOARD</option>
+					<option value="graphic_card">GPU</option>
+					<option value="ram">MEMORY RAM</option>
+					<option value="ac">AC</option>
+					<option value="harddrive">HD/SSD</option>
+					<option value="body">BODY</option>
+				</select> 
+				</div>
+				
+				  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+<button type="submit" class="btn btn-default">Submit</button>
+			
+			 </div>
+			 </div>
+				
+				
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

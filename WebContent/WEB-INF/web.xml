@@ -1,33 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>MyDatabase</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ComputerShop</display-name>
+  <servlet>
+    <servlet-name>display</servlet-name>
+    <servlet-class>com.patryk.adaramelech.Display3MaxIndexPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>display</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Admin Part</web-resource-name>
+      <url-pattern>/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>ALL</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
 
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>Admin Part</web-resource-name>
-			<url-pattern>/AddProduct</url-pattern>
-		</web-resource-collection>
-		<web-resource-collection>
-			<web-resource-name>Admin Part</web-resource-name>
-			<url-pattern>/newProduct.html</url-pattern>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>admin</role-name>
-		</auth-constraint>
-	</security-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Checkout</web-resource-name>
+      <url-pattern>/Checkout</url-pattern>
+    </web-resource-collection>
+    <web-resource-collection>
+      <web-resource-name>Checker</web-resource-name>
+      <url-pattern>/Checker</url-pattern>
+    </web-resource-collection>
+    <web-resource-collection>
+      <web-resource-name>CartShop</web-resource-name>
+      <url-pattern>/CartShop</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>client</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
 
-	<login-config>
-		<auth-method>FORM</auth-method>
-		<form-login-config>
-			<form-login-page>/login.jsp</form-login-page>
-			<form-error-page>/login-error.jsp</form-error-page>
-		</form-login-config>
-	</login-config>
-	<error-page>
-		<error-code>403</error-code>
-		<location>/unauthorized.jsp</location>
-	</error-page>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/forms/login.jsp</form-login-page>
+      <form-error-page>/forms/login-error.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/unauthorized.jsp</location>
+  </error-page>
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
 </web-app>
