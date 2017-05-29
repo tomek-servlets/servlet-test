@@ -3,13 +3,13 @@ package com.patryk.adaramelech;
 public class DBInfo {
 	static String host = "mysql"; // In most cases you will use
 													// localhost
-	static String DBname = "lllc";
+	static String DBname = "shopcomputer";
 	static int port = 3306; // This is for MySQL
 	static String mySQLdbURL = "jdbc:mysql://" + host + ":" + port + "/"
 			+ DBname;
 
 	static String user = "root";
-	static String password = "root";
+	static String password = "password";
 	
 	static String driver = "com.mysql.jdbc.Driver";
 
