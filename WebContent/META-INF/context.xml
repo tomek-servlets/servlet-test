@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+	<Realm className="org.apache.catalina.realm.JDBCRealm" digest="SHA"
+		connectionURL="jdbc:mysql://mysql/lllc?user=root&amp;password=root"
+		debug="99" driverName="com.mysql.jdbc.Driver" roleNameCol="role_name"
+		userCredCol="user_pass" userNameCol="user_name" userRoleTable="user_roles"
+		userTable="usersDig" />
+
+</Context>
