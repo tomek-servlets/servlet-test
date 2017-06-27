@@ -41,7 +41,7 @@ public class AddUser extends HttpServlet {
 		
 		base.addNewUser(name, password, role);
 		
-		RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/addingOk.jsp");
+		RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/addingUserOk.jsp");
 		disp.forward(request, response);
 
 
