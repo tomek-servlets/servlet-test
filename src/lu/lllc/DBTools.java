@@ -190,12 +190,12 @@ public class DBTools {
 		try {
 			statement = connection.createStatement();
 			
-			searchString = "SELECT * FROM usersDig WHERE user_name='" + name + "'";
+			searchString = "SELECT * FROM users WHERE user_name='" + name + "'";
 			result = statement.executeQuery(searchString);
 
 			if (!result.next()) {
 				PreparedStatement stm = connection
-						.prepareStatement("INSERT INTO usersDig (user_name, user_pass) VALUES (?,?)");
+						.prepareStatement("INSERT INTO users (user_name, user_pass) VALUES (?,?)");
 
 				stm.setString(1, name);
 				stm.setString(2, password);
