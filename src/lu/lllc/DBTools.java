@@ -124,8 +124,7 @@ public class DBTools {
 		Connection connection = getConnction();
 
 		try {
-			PreparedStatement statement = connection
-					.prepareStatement("UPDATE products SET price = ? WHERE id = ?");
+			PreparedStatement statement = connection.prepareStatement("UPDATE products SET price = ? WHERE id = ?");
 			statement.setFloat(1, price);
 			statement.setLong(2, id);
 
@@ -143,8 +142,7 @@ public class DBTools {
 		Connection connection = getConnction();
 
 		try {
-			PreparedStatement statement = connection
-					.prepareStatement("DELETE FROM products WHERE id=?");
+			PreparedStatement statement = connection.prepareStatement("DELETE FROM products WHERE id=?");
 
 			for (Long id : list) {
 				statement.setLong(1, id.longValue());
@@ -158,27 +156,8 @@ public class DBTools {
 
 	}
 
-	void setDiscount(float discount) {
-		Connection connection = getConnction();
 
-		try {
-			CallableStatement cs = connection
-					.prepareCall("{ ? = call discount(?) }");
-			
-			//Register the output before executing (if it is a function) !!!
-			cs.registerOutParameter(1, Types.BIGINT);
-			cs.setFloat(2, discount);
-			cs.execute();
 
-			
-			System.out.println("Number of products: " + cs.getLong(1));
-			cs.close();
-			connection.close();
-		} catch (SQLException e) {
-			System.out.println("Error in stored procedure call: " + e);
-		}
-	}
-	
 	void addNewUser(String name, String password, String role) {
 		Statement statement = null;
 		ResultSet result = null;
@@ -189,7 +168,7 @@ public class DBTools {
 
 		try {
 			statement = connection.createStatement();
-			
+
 			searchString = "SELECT * FROM users WHERE user_name='" + name + "'";
 			result = statement.executeQuery(searchString);
 
@@ -209,8 +188,7 @@ public class DBTools {
 			result = statement.executeQuery(searchString);
 
 			if (!result.next()) {
-				PreparedStatement stm = connection
-						.prepareStatement("INSERT INTO roles (role_name) VALUES (?)");
+				PreparedStatement stm = connection.prepareStatement("INSERT INTO roles (role_name) VALUES (?)");
 
 				stm.setString(1, role);
 
@@ -219,8 +197,7 @@ public class DBTools {
 				stm.close();
 			}
 
-			searchString = "SELECT * FROM user_roles WHERE user_name='" + name
-					+ "' AND role_name='" + role + "'";
+			searchString = "SELECT * FROM user_roles WHERE user_name='" + name + "' AND role_name='" + role + "'";
 			result = statement.executeQuery(searchString);
 
 			if (!result.next()) {
@@ -241,6 +218,5 @@ public class DBTools {
 		}
 
 	}
-	
-	
+
 }

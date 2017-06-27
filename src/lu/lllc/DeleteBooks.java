@@ -30,8 +30,8 @@ public class DeleteBooks extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Enumeration<String> parNames = request.getParameterNames();
 
 		ArrayList<Long> list = new ArrayList<Long>();
@@ -46,22 +46,21 @@ public class DeleteBooks extends HttpServlet {
 			disp.forward(request, response);
 			return;
 		}
-		
+
 		DBTools dbTools = new DBTools();
 		dbTools.deleteBooks(list);
-		
+
 		RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/deletingOk.jsp");
 		disp.forward(request, response);
 
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
